@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>{% block title %}{% endblock %} Own Words App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css"
+        integrity="sha256-QVBN0oT74UhpCtEo4Ko+k3sNo+ykJFBBtGduw13V9vw=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.js"
+        integrity="sha256-qs5p0BFSqSvrstBxPvex+zdyrzcyGdHNeNmAirO2zc0=" crossorigin="anonymous"></script>
+</head>
+
+
+<body id="root">
+    <div class="ui inverted vertical center aligned segment">
+        <nav class="ui container">
+            <h1 class="ui inverted header">Own Words</h1>
+            <!-- <div class="ui borderless inverted compact menu">
+                <a class="active item">Home</a> <a class="item">Feature</a>
+                <a class="item">Contact</a>
+            </div> -->
+        </nav>
+
+        <div class="ui content container">
+
+            <!-- <header>
+                {% block header %}{% endblock %}
+            </header> -->
+
+            {% for message in get_flashed_messages() %}
+                <div class="flash">{{ message }}</div>
+            {% endfor %}
+
+            {% block content %}{% endblock %}
+
+
+            <!-- <h1 class="ui inverted header">Cover your page.</h1>
+            <p>
+                Cover is a one-page template for building simple and beautiful home
+                pages. Download, edit the text, and add your own fullscreen background
+                photo to make it your own.
+            </p>
+            <div class="ui huge button">Learn more</div> -->
+
+
+        </div>
+        <footer class="ui inverted vertical segment">
+            Cover template for <a href="http://semantic-ui.com">Semantic-UI</a>, by
+            <a href="https://github.com/semantic-ui-forest">@Semantic-UI-Forest</a>.
+        </footer>
+    </div>
+</body>
+
+
+</html>

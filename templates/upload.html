@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<div class="ui inverted segment">
+  <form class="ui form" method="POST" action="/result" type = "text">
+	<div class="ui inverted form">
+
+
+  <textarea>Some text...</textarea>
+  <p><input class = "submit" type ="submit" value = "Upload"/></p>
+
+<!-- enctype="multipart/form-data -->
+			<!-- <div class="field">
+				<div class="ui action input">
+          <textarea rows="4" cols="50" name="text" id = 'text' form = "text" placeholder = "Enter text here..."></textarea>
+            <!-- <p><input class = "sub" type="submit" name="submit" value="Submit"></p> -->
+						<!-- <input type="text" placeholder="Text Document" readonly, type = text> -->
+            <!-- <p><input class = "minh" name = "text" type = "text" id = "text" placeholder="text" required></p> -->
+						<!-- <input type="text" name="file" autocomplete="off" required> -->
+					<!-- <div class="ui icon button"></div>
+						<i class="attach icon"></i>
+					</div> --> -->
+				</div>
+      </form>
+		</div>
+
+			<!-- <div class="field">
+				<button class="ui button primary" type="submit">Submit</button>
+			</div> -->
+
+
+
+
+
+
+<script>
+	$("input:text").click(function() {
+		$(this).parent().find("input:file").click();
+	});
+
+	$('input:file', '.ui.action.input')
+	.on('change', function(e) {
+		var name = e.target.files[0].name;
+		$('input:text', $(e.target).parent()).val(name);
+	});
+
+</script>
+
+		<!-- <form class="ui form">
+
+				<div class="field">
+					<label>First Name</label>
+					<input type="text" name="first-name" placeholder="First Name">
+				</div>
+
+				<div class="field">
+					<label>Last Name</label>
+					<input type="text" name="last-name" placeholder="Last Name">
+				</div>
+
+				<div class="field">
+					<div class="ui checkbox">
+						<input type="checkbox" tabindex="0" class="hidden">
+						<label>I agree to the Terms and Conditions</label>
+					</div>
+				</div>
+
+				<button class="ui button" type="submit">Submit</button>
+			</form> -->
+
+
+
+</div>
+
+
+<!-- <h2>Select a file to upload</h2>
+	<p>
+		{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			<ul class=flashes>
+			{% for message in messages %}
+			<li>{{ message }}</li>
+			{% endfor %}
+			</ul>
+		{% endif %}
+		{% endwith %}
+	</p>
+	 -->
+<!-- <form method="post" action="/" enctype="multipart/form-data">
+		<dl>
+			<p>
+				<input type="file" name="file" autocomplete="off" required>
+			</p>
+		</dl>
+		<p>
+			<input type="submit" value="Submit">
+		</p>
+	</form> -->
+
+{% endblock %}

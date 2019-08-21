@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<html>
+    <head>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $("#content").load("/ajax/index");
+            });
+        </script>
+    </head>
+    <body>
+        <div id="content" tyle="display:none;"><img src="static/loading.gif" alt="" /></div>
+        <div id="content" color = black>Processing Text</div>
+    </body>
+</html>
+
+{% endblock %}
